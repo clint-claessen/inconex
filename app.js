@@ -76,9 +76,9 @@
     document.body.appendChild(dot); document.body.appendChild(ring);
     var mx = -100, my = -100, rx = -100, ry = -100, raf = null;
     function loop() {
-      rx += (mx - rx) * 0.2; ry += (my - ry) * 0.2;
+      rx += (mx - rx) * 0.55; ry += (my - ry) * 0.55;
       ring.style.left = rx + "px"; ring.style.top = ry + "px";
-      if (Math.abs(mx - rx) > 0.4 || Math.abs(my - ry) > 0.4) raf = requestAnimationFrame(loop);
+      if (Math.abs(mx - rx) > 0.3 || Math.abs(my - ry) > 0.3) raf = requestAnimationFrame(loop);
       else raf = null;
     }
     document.addEventListener("mousemove", function (e) {
