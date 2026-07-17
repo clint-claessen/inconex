@@ -277,8 +277,19 @@ em { font-style: italic; }
 .subhead { font-family: var(--ui); font-size: .8rem; text-transform: uppercase; letter-spacing: .2em; font-weight: 600; color: var(--muted); margin: 64px 0 24px; display: flex; align-items: center; gap: 14px; }
 .subhead::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 .team-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
-.member { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform .4s var(--ease-out), box-shadow .4s; }
-a.member { color: inherit; text-decoration: none; }
+.member { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform .4s var(--ease-out), box-shadow .4s; }
+.member .card-link { color: inherit; }
+.member .card-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.member .linkedin {
+  position: absolute; top: 14px; right: 14px; z-index: 2;
+  width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,.94); color: #0a66c2;
+  box-shadow: 0 4px 14px rgba(24,36,46,.18);
+  transition: background .25s, color .25s, transform .25s var(--ease-out);
+}
+.member .linkedin:hover { background: #0a66c2; color: #fff; transform: translateY(-2px); }
+.member .linkedin svg { width: 19px; height: 19px; display: block; }
 .member:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px rgba(24,36,46,.34); }
 .member .photo { aspect-ratio: 1/1; overflow: hidden; background: var(--bg-2); }
 .member .photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease-out); filter: grayscale(.18); }
