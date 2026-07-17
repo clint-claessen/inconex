@@ -344,7 +344,7 @@ em { font-style: italic; }
 .press-item h3 { font-size: 1.55rem; margin-bottom: .2em; }
 .press-item .where { font-family: var(--ui); font-size: .74rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 600; color: var(--accent); margin-bottom: 16px; }
 .press-item p { font-size: 1rem; color: var(--ink-2); }
-.press-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 12px; margin-top: 20px; }
+.press-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 300px)); gap: 12px; margin-top: 20px; }
 .press-gallery img { border-radius: 12px; aspect-ratio: 4/3; object-fit: cover; width: 100%; transition: transform .5s var(--ease-out); }
 .press-gallery img:hover { transform: scale(1.03); }
 
